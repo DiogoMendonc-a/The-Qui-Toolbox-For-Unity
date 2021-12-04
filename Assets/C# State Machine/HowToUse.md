@@ -1,6 +1,6 @@
 # How to Use State Machines
 
-All the classes are in the `Assets.StateMachine` namespace
+All the classes are in the `Qui.StateMachine` namespace
 
 ## States
 The first step you need to take is to define states for your machine, using the State class.
