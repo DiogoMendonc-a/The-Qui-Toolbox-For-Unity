@@ -1,8 +1,16 @@
 using System;
+using UnityEngine;
 
 namespace Qui.StateMachine {
     public interface Condition {
         public bool Evaluate();
+    }
+
+    [System.Serializable]
+    public class VisualCondition : Condition{
+        public bool Evaluate() {
+            return true; //TODO
+        }
     }
 
     public class TrueCondition : Condition {

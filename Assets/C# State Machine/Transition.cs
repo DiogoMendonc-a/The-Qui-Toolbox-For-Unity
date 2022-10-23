@@ -1,26 +1,41 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
 
 namespace Qui.StateMachine {
+    
+    [System.Serializable]
     public class Transition {
         public class DefaultTransition : Transition {
-            public DefaultTransition(State target, List<Action> act = null) : base(target,  new TrueCondition(), act) {}
+            public DefaultTransition(State target, List<Action> act = null) : 
+                base(target, new List<Condition>{ new TrueCondition() }, act) {}
         }
 
+        public UnityEvent events;
         List<Action> actions;
         State targetState;
 
-        Condition condition;
+        public List<Condition> conditions;
+        public List<VisualCondition> _conditions;
 
-        public Transition(State target, Condition cond, List<Action> act = null) {
+        public Transition(State target, List<Condition> conditions = null, List<Action> act = null) {
             targetState = target;
-            condition = cond;
+            this.conditions = conditions;
             if(act !=null)
                 actions = new List<Action>(act);
             else
                 actions = new List<Action>();    
         }
 
+        public void AddCondition(Condition condition) {
+            conditions.Add(condition);
+        }
+
+        public void SetTargetState(State target) {
+            targetState = target;
+        }
+        
         public void AddAction(Action action) {
             actions.Add(action);
         }
@@ -33,7 +48,12 @@ namespace Qui.StateMachine {
         }
 
         public bool IsTriggered() {
-            return condition.Evaluate();
+            bool trigger = true;
+            foreach (Condition c in conditions)
+            {
+                trigger = trigger && c.Evaluate();
+            }
+            return trigger;
         }
     }
 }

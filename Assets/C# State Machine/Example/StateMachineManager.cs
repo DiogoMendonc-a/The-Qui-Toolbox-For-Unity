@@ -54,9 +54,9 @@ public class StateMachineManager : MonoBehaviour
 
         //Associate conditions with transitions
         Transition defaultToAlpha = new Transition.DefaultTransition(alphaState); //Entry state immediatelly goes to alpha state
-        Transition transAlpha = new Transition(alphaState, new NOTCondition(yValue));
-        Transition transBeta = new Transition(betaState, xValue);
-        Transition transDelta = new Transition(deltaState, yValue);
+        Transition transAlpha = new Transition(alphaState, new List<Condition>{ new NOTCondition(yValue) } );
+        Transition transBeta = new Transition(betaState, new List<Condition>{ xValue });
+        Transition transDelta = new Transition(deltaState, new List<Condition>{ yValue });
 
         //Give States The Trasitions They can Trigger
         entryState.AddTransition(defaultToAlpha);
@@ -111,9 +111,9 @@ public class StateMachineManager : MonoBehaviour
         Condition conditionC = new BooleanFunctionCondition(() => condC);
 
         //Associate conditions with transitions
-        Transition transA = new Transition(deltaAState, conditionA);
-        Transition transB = new Transition(deltaBState, conditionB);
-        Transition transC = new Transition(deltaCState, conditionC);
+        Transition transA = new Transition(deltaAState, new List<Condition>{ conditionA });
+        Transition transB = new Transition(deltaBState, new List<Condition>{ conditionB });
+        Transition transC = new Transition(deltaCState, new List<Condition>{ conditionC });
 
         //Give States The Trasitions They can Trigger
         deltaAState.AddTransition(transB);

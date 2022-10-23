@@ -39,7 +39,14 @@ namespace Qui.StateMachine {
             else {
                 return currentState.GetActions();
             }
+        }
 
+        public void UpdateAndExecute() {
+            Action[] actions = Update();
+            foreach (Action a in actions)
+            {
+                a.Invoke();
+            }
         }
 
         public string GetCurrentStateName() {

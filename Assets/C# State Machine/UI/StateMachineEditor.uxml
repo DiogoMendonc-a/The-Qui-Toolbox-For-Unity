@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/C%23%20State%20Machine/UI/StateMachineEditor.uss?fileID=7433441132597879392&amp;guid=d50fd274871639c42b1e820488acca1a&amp;type=3#StateMachineEditor" />
+    <uie:Toolbar>
+        <uie:ToolbarMenu display-tooltip-when-elided="true" text="Assets" />
+    </uie:Toolbar>
+    <SplitView fixed-pane-initial-dimension="900" name="SplitView">
+        <ui:VisualElement name="machine-panel">
+            <ui:Label text="Machine View" display-tooltip-when-elided="true" style="background-color: rgb(40, 40, 40);" />
+            <StateMachineView focusable="true" style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="inspector-panel">
+            <ui:Label text="Inspector" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37);" />
+            <InspectorView />
+        </ui:VisualElement>
+    </SplitView>
+</ui:UXML>
