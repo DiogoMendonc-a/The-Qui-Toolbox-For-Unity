@@ -67,6 +67,7 @@ public class StateMachineView : GraphView
     }
 
     GraphViewChange OnGraphViewChanged(GraphViewChange graphViewChange) {
+        EditorUtility.SetDirty(smc);
         if(graphViewChange.elementsToRemove != null) {
             graphViewChange.elementsToRemove.ForEach(elem => {
                 StateView stateView = elem as StateView;
@@ -127,6 +128,7 @@ public class StateMachineView : GraphView
     }
 
     public void SetInitialState(StateView state) {
+        EditorUtility.SetDirty(smc);
         smc.SetInitialState(state.state);
     }
 

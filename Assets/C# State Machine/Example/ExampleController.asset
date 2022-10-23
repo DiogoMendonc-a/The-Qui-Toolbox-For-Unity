@@ -13,7 +13,190 @@ MonoBehaviour:
   m_Name: ExampleController
   m_EditorClassIdentifier: 
   states:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - name: New State
+    guid: adf06f196425ff64299d27d96f7b4909
+    guiPositionX: 293
+    guiPositionY: 228
+    _entryEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    _executionEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    _exitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    _transitions:
+    - events:
+        m_PersistentCalls:
+          m_Calls: []
+      targetState:
+        rid: 1360777011709345799
+      _conditions: []
+    _serializableTransitions:
+    - events:
+        m_PersistentCalls:
+          m_Calls: []
+      targetState:
+        rid: 1360777011709345799
+      _conditions: []
+  - name: New State
+    guid: 32c4778c81f0b9641bd4dc6bfe943367
+    guiPositionX: 399
+    guiPositionY: 390
+    _entryEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    _executionEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    _exitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    _transitions:
+    - events:
+        m_PersistentCalls:
+          m_Calls: []
+      targetState:
+        rid: 1360777011709345800
+      _conditions: []
+    _serializableTransitions:
+    - events:
+        m_PersistentCalls:
+          m_Calls: []
+      targetState:
+        rid: 1360777011709345800
+      _conditions: []
+  - name: New State
+    guid: 21b9333ceeb55324aa3829eb7ff8c141
+    guiPositionX: 100
+    guiPositionY: 243
+    _entryEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    _executionEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    _exitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    _transitions:
+    - events:
+        m_PersistentCalls:
+          m_Calls: []
+      targetState:
+        rid: 1360777011709345805
+      _conditions: []
+    _serializableTransitions:
+    - events:
+        m_PersistentCalls:
+          m_Calls: []
+      targetState:
+        rid: 1360777011709345805
+      _conditions: []
+  transition:
+    events:
+      m_PersistentCalls:
+        m_Calls: []
+    targetState:
+      rid: -2
+    _conditions: []
+  initialState:
+    name: New State
+    guid: adf06f196425ff64299d27d96f7b4909
+    guiPositionX: 294
+    guiPositionY: 123
+    _entryEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    _executionEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    _exitEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    _transitions: []
+    _serializableTransitions: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 1360777011709345799
+      type: {class: State, ns: Qui.StateMachine, asm: Assembly-CSharp}
+      data:
+        name: New State
+        guid: 32c4778c81f0b9641bd4dc6bfe943367
+        guiPositionX: 584
+        guiPositionY: 208
+        _entryEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        _executionEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        _exitEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        _transitions: []
+        _serializableTransitions: []
+    - rid: 1360777011709345800
+      type: {class: State, ns: Qui.StateMachine, asm: Assembly-CSharp}
+      data:
+        name: New State
+        guid: 21b9333ceeb55324aa3829eb7ff8c141
+        guiPositionX: 100
+        guiPositionY: 243
+        _entryEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        _executionEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        _exitEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        _transitions:
+        - events:
+            m_PersistentCalls:
+              m_Calls: []
+          targetState:
+            rid: 1360777011709345805
+          _conditions: []
+        _serializableTransitions:
+        - events:
+            m_PersistentCalls:
+              m_Calls: []
+          targetState:
+            rid: 1360777011709345805
+          _conditions: []
+    - rid: 1360777011709345805
+      type: {class: State, ns: Qui.StateMachine, asm: Assembly-CSharp}
+      data:
+        name: New State
+        guid: adf06f196425ff64299d27d96f7b4909
+        guiPositionX: 293
+        guiPositionY: 228
+        _entryEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        _executionEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        _exitEvent:
+          m_PersistentCalls:
+            m_Calls: []
+        _transitions:
+        - events:
+            m_PersistentCalls:
+              m_Calls: []
+          targetState:
+            rid: 1360777011709345799
+          _conditions: []
+        _serializableTransitions:
+        - events:
+            m_PersistentCalls:
+              m_Calls: []
+          targetState:
+            rid: 1360777011709345799
+          _conditions: []

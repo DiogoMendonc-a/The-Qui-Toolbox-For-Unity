@@ -8,11 +8,12 @@ public class StateMachineController : ScriptableObject
 {
 
     public List<State> states = new List<State>();
-
-    public State initialState;
+    public Transition transition;
+    [HideInInspector]
+    public State initialState = null;
 
     public State CreateState() {
-        State state = State.CreateInstance<State>();
+        State state = new State();
         state.name = "New State";
         state.guid = GUID.Generate().ToString();
         states.Add(state);
@@ -25,8 +26,7 @@ public class StateMachineController : ScriptableObject
     }
 
     public Transition CreateTransition(State from, State to) {
-        Transition t = Transition.CreateInstance<Transition>();
-        t.SetTargetState(to);
+        Transition t = new Transition(to);
         from.AddTransition(t);
         return t;
     }

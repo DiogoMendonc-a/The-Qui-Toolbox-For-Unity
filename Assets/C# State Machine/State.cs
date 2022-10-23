@@ -4,8 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace Qui.StateMachine {
-    public class State : ScriptableObject{
-        public new string name;
+    [Serializable]
+    public class State {
+        public string name;
         [HideInInspector]
         public string guid;
         [HideInInspector]
@@ -20,7 +21,9 @@ namespace Qui.StateMachine {
         public UnityEvent _entryEvent;
         public UnityEvent _executionEvent;
         public UnityEvent _exitEvent;
-        List<Transition> _transitions;
+        
+        [HideInInspector]
+        public List<Transition> _transitions;
 
         public State(Action[] entryActions = null, Action[] actions = null, 
                         Action[] exitActions = null, Transition[] transitions = null)

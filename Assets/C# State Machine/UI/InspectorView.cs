@@ -15,7 +15,11 @@ public class InspectorView : VisualElement
         Clear();
 
         UnityEngine.Object.DestroyImmediate(editor);
-        editor = Editor.CreateEditor(selection.state);
+
+        StateDrawer sd = StateDrawer.CreateInstance<StateDrawer>();
+        sd.state = selection.state;
+        editor = Editor.CreateEditor(sd);
+        
         IMGUIContainer container = new IMGUIContainer(() => { editor.OnInspectorGUI(); });
         Add(container);
     }
@@ -24,7 +28,11 @@ public class InspectorView : VisualElement
         Clear();
 
         UnityEngine.Object.DestroyImmediate(editor);
-        editor = Editor.CreateEditor(selection.transition);
+
+        TransitionDrawer td = TransitionDrawer.CreateInstance<TransitionDrawer>();
+        td.transiton = selection.transition;
+        editor = Editor.CreateEditor(td);
+
         IMGUIContainer container = new IMGUIContainer(() => { editor.OnInspectorGUI(); });
         Add(container);
     }

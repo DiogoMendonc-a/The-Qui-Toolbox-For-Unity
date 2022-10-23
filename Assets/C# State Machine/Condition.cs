@@ -7,7 +7,7 @@ namespace Qui.StateMachine {
     }
 
     [System.Serializable]
-    public class VisualCondition : Condition{
+    public class VisualCondition : Condition {
         public bool Evaluate() {
             return true; //TODO
         }

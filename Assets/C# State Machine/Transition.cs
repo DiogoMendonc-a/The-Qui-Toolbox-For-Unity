@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 namespace Qui.StateMachine {
-    
+
     [System.Serializable]
     public class Transition {
         public class DefaultTransition : Transition {
@@ -14,6 +14,8 @@ namespace Qui.StateMachine {
 
         public UnityEvent events;
         List<Action> actions;
+        
+        [SerializeReference]
         State targetState;
 
         public List<Condition> conditions;
